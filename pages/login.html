@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student & Parent Sign In | CodeJam Kids Coding Academy</title>
+  <meta name="description" content="Sign in to your student learning dashboard, launch live video classrooms, view feedback, and run Python code.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#EE5928',
+              yellow: '#F9B829',
+              pink: '#FA6B88',
+              green: '#88BD37',
+              blue: '#44B8C7',
+              purple: '#9063CD',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    if (localStorage.getItem('meelo_theme') === 'dark') document.documentElement.classList.add('dark');
+    if (localStorage.getItem('meelo_rtl') === 'true') document.documentElement.setAttribute('dir', 'rtl');
+  </script>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#FBF8F1] dark:bg-[#0F1322] text-slate-800 dark:text-slate-100 transition-colors">
+
+  <!-- SECTION 1: LOGIN CARD & FORM -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-md mx-auto px-4">
+      <div class="bg-white dark:bg-slate-800 p-8 sm:p-10 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-2xl space-y-6">
+        
+        <div class="text-center space-y-2">
+          <a href="../index.html" class="inline-flex items-center gap-3 group mx-auto justify-center">
+            <img src="../assets/logo.png" alt="CodeJam Logo" class="w-14 h-14 object-contain drop-shadow-lg transition-transform group-hover:scale-105">
+            <div class="flex flex-col leading-none text-left">
+              <span class="font-heading text-2xl font-bold text-orange-600 dark:text-orange-400 tracking-tight">CodeJam</span>
+              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.18em] mt-0.5">Kids Coding Academy</span>
+            </div>
+          </a>
+          <h1 class="font-heading text-3xl font-bold text-slate-900 dark:text-white">Welcome Back!</h1>
+          <p class="text-xs text-slate-500">Sign in to your student & parent dashboard</p>
+        </div>
+
+        <form id="loginForm" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Parent Email / Student ID</label>
+            <input type="email" value="leo_wizard@codejam.academy" required class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <label class="text-xs font-bold text-slate-700 dark:text-slate-300">Secret Password / Emoji PIN</label>
+              <a href="#" onclick="alert('Password reset link sent to your registered email!'); return false;" class="text-[11px] text-orange-600 dark:text-orange-400 font-bold hover:underline">Forgot Password?</a>
+            </div>
+            <input type="password" value="••••••••" required class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+          </div>
+
+          <button type="submit" class="w-full btn-meelo-orange py-3.5 rounded-2xl text-xs sm:text-sm font-bold shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2">
+            Enter Classroom <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </form>
+
+        <!-- Quick Demo Switchers -->
+        <div class="pt-4 border-t border-slate-100 dark:border-slate-700 space-y-2">
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider text-center">Instant Demo Portals</div>
+          <div class="grid grid-cols-2 gap-2">
+            <a href="user-dashboard.html" class="p-2.5 rounded-xl bg-amber-50 dark:bg-slate-700/80 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-slate-600 text-[11px] font-bold text-center hover:bg-amber-100 transition flex items-center justify-center gap-1.5">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-amber-600 dark:text-amber-400"></i> Student Portal
+            </a>
+            <a href="admin-dashboard.html" class="p-2.5 rounded-xl bg-purple-50 dark:bg-slate-700/80 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-slate-600 text-[11px] font-bold text-center hover:bg-purple-100 transition flex items-center justify-center gap-1.5">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-purple-600 dark:text-purple-400"></i> Admin Portal
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center text-xs text-slate-500 pt-2">
+          Don't have an account yet? <a href="signup.html" class="text-orange-600 dark:text-orange-400 font-bold hover:underline">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- SECTION 4: HELP -->
+  <section class="py-6 bg-white dark:bg-slate-900 text-center text-xs text-slate-400">
+    <span>Need help with your login? Email: <a href="mailto:support@codejam.academy" class="text-orange-500 font-bold">support@codejam.academy</a></span>
+  </section>
+
+  <!-- SECTION 5: SAFETY -->
+  <section class="py-4 bg-slate-50 dark:bg-slate-800/40 text-center text-[11px] text-slate-400">
+    <span>Protected by 256-bit SSL encryption & COPPA certified protocols</span>
+  </section>
+
+  <script src="../js/form-validation.js"></script>
+</body>
+</html>

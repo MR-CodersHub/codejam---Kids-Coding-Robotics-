@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summer STEM Camps 2027 | Coming Soon | CodeJam Academy</title>
+  <meta name="description" content="Summer 2027 Game Design & Robotics Camps: Full-day and half-day immersive coding camps for kids ages 6–14.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#EE5928',
+              yellow: '#F9B829',
+              pink: '#FA6B88',
+              green: '#88BD37',
+              blue: '#44B8C7',
+              purple: '#9063CD',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#FBF8F1] dark:bg-[#0F1322] text-slate-800 dark:text-slate-100 transition-colors">
+  
+
+  <!-- SECTION 1: COMING SOON COUNTDOWN HERO -->
+  <section class="py-16 md:py-24 text-center">
+    <div class="max-w-3xl mx-auto px-4 space-y-6">
+      <div class="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl flex items-center justify-center text-white mx-auto shadow-xl">
+        <img src="../assets/logo.png" alt="logo">
+      </div>
+      <div class="inline-block px-4 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 text-xs font-bold uppercase tracking-wider">
+        Launching Summer 2027
+      </div>
+      <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 dark:text-white">
+        CodeJam Summer STEM & Robotics Camps
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto leading-relaxed">
+        Our immersive 1-week and 2-week summer hackathon camps are coming soon! Kids build multiplayer arcade games, launch robotic space probes, and make lifelong tech friends.
+      </p>
+
+      <!-- Countdown Display -->
+      <div class="grid grid-cols-4 gap-4 max-w-md mx-auto pt-4">
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md">
+          <div class="font-heading text-3xl font-bold text-orange-600">84</div>
+          <div class="text-[10px] text-slate-400 uppercase font-bold">Days</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md">
+          <div class="font-heading text-3xl font-bold text-amber-500">14</div>
+          <div class="text-[10px] text-slate-400 uppercase font-bold">Hours</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md">
+          <div class="font-heading text-3xl font-bold text-green-500">32</div>
+          <div class="text-[10px] text-slate-400 uppercase font-bold">Mins</div>
+        </div>
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md">
+          <div class="font-heading text-3xl font-bold text-cyan-500">45</div>
+          <div class="text-[10px] text-slate-400 uppercase font-bold">Secs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: EARLY VIP WAITLIST -->
+  <section class="py-12 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800">
+    <div class="max-w-xl mx-auto px-4 text-center space-y-4">
+      <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Get Early Access & 20% Early Bird Discount</h3>
+      <p class="text-xs text-slate-500">Camp cohorts are limited to 12 students per session to maintain individual attention.</p>
+      
+      <form onsubmit="event.preventDefault(); if(window.showToastMessage) window.showToastMessage('You are on the Summer 2027 VIP Waitlist!'); this.reset();" class="flex flex-col sm:flex-row gap-2 pt-2">
+        <input type="email" placeholder="Parent's email address" required class="flex-1 px-4 py-3 rounded-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+        <button type="submit" class="btn-meelo-orange px-6 py-3 rounded-full text-xs font-bold shadow-md">
+          Join VIP Waitlist →
+        </button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- SECTION 5: SAFETY BANNER -->
+  <section class="py-6 bg-slate-50 dark:bg-slate-800/40 text-center text-xs text-slate-400">
+    <span>CodeJam Summer Camps • Certified CPR / First Aid Instructors • COPPA Verified</span>
+  </section>
+
+  <script src="../js/form-validation.js"></script>
+</body>
+</html>

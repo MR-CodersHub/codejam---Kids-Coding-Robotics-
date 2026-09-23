@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeJam Robotics & AI Hardware Lab | Hands-On STEM for Kids</title>
+  <meta name="description" content="Niche Hardware & Robotics Track: Free STEM robotics kit mailed to your doorstep with Micro:bit v2, ultrasonic sensors, and autonomous rovers.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#EE5928',
+              yellow: '#F9B829',
+              pink: '#FA6B88',
+              green: '#88BD37',
+              blue: '#44B8C7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#FBF8F1] dark:bg-[#0F1322] text-slate-800 dark:text-slate-100 transition-colors">
+  
+  <div id="shared-navbar"></div>
+
+  <!-- SECTION 1: TUTOR & MENTOR MATCH HERO (INSPIRED 4-CARD GEOMETRIC COLLAGE) -->
+  <section class="py-16 md:py-24 relative overflow-hidden bg-[#FBF8F1] dark:bg-[#0F1322] transition-colors ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-6 relative text-center lg:text-left flex flex-col items-center lg:items-start">
+          
+          <!-- Doodle Accents (SVG) -->
+          <svg class="absolute -top-6 -left-6 w-12 h-12 text-amber-400 opacity-60 hidden lg:block pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6">
+            <path d="M10 50 Q 30 10 50 50 T 90 50" stroke-linecap="round"/>
+          </svg>
+
+          <span class="font-display inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 text-orange-600 dark:text-orange-400 px-4 py-1.5 rounded-full border-2 border-orange-200 dark:border-orange-800/60">
+            <i data-lucide="bot" class="w-4 h-4"></i> Live Kids Coding Classes, Ages 6–14
+          </span>
+
+          <div class="relative inline-block">
+            <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 dark:text-white leading-[1.1]">
+              Find Your Perfect <br>
+              <span class="relative inline-block text-slate-900 dark:text-white">
+                Coding Mentor
+                <!-- Doodle Underline Highlight -->
+                <svg class="absolute -bottom-2 left-0 w-full h-4 text-amber-400" viewBox="0 0 260 20" fill="none" preserveAspectRatio="none">
+                  <path d="M5 14 Q 70 3 130 12 T 255 8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </h1>
+
+            <!-- Butterfly/Loop Doodle -->
+            <svg class="inline-block w-9 h-9 text-cyan-500 absolute -top-4 -right-6 sm:-right-8 lg:right-28" viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M15 25 C5 15 5 5 15 15 C25 25 35 25 40 15 C45 5 35 5 30 15 C20 35 10 45 25 35" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            We help your child find the perfect certified coding coach for 1-on-1 and small cohorts. Fun, personalized, and 100% free and private trial.
+          </p>
+
+          <!-- Rotating "build" line -->
+          <div class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 rounded-full pl-3 pr-4 py-2 shadow-md">
+            <i data-lucide="rocket" class="w-4 h-4 text-orange-500 animate-wiggle"></i>
+            <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Today your child can build</span>
+            <span id="rotatingWord2" class="font-display text-sm font-bold text-cyan-600 dark:text-cyan-400">video games</span>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-5 pt-2">
+            <a href="booking.html" class="btn-meelo-yellow px-8 py-3.5 rounded-full font-bold text-sm sm:text-base text-slate-900 shadow-xl hover:scale-105 transition">
+              Get Started
+            </a>
+            
+            <!-- Video Play Button -->
+            <button onclick="if(window.showToastMessage) window.showToastMessage('Loading live classroom preview...');" class="inline-flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group">
+              <span class="w-12 h-12 rounded-full bg-cyan-100 dark:bg-cyan-900/60 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shadow-md group-hover:scale-110 transition">
+                <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
+              </span>
+              <span>See how it works</span>
+            </button>
+          </div>
+
+          <!-- Hero Quick Stats -->
+          <div class="pt-8 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-6 max-w-lg w-full mx-auto lg:mx-0 text-center">
+            <div>
+              <div class="font-heading text-3xl font-bold text-orange-600 dark:text-orange-400">99.2%</div>
+              <div class="text-xs font-semibold text-slate-500">Satisfaction Rate</div>
+            </div>
+            <div>
+              <div class="font-heading text-3xl font-bold text-orange-600 dark:text-orange-400">1:4</div>
+              <div class="text-xs font-semibold text-slate-500">Max Class Ratio</div>
+            </div>
+            <div>
+              <div class="font-heading text-3xl font-bold text-orange-600 dark:text-orange-400">100%</div>
+              <div class="text-xs font-semibold text-slate-500">Money-Back Guarantee</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right 4-Card Geometric Arch Grid (Exact Reference Replica) -->
+        <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+          
+          <!-- Background Doodle Shapes -->
+          <!-- Top Right Pastel Yellow Circle -->
+          <div class="absolute -top-8 right-0 sm:right-2 w-36 h-36 md:w-44 md:h-44 bg-[#FFE58F]/80 dark:bg-amber-500/20 rounded-full -z-10 pointer-events-none"></div>
+          
+          <!-- Top Right Yellow Diamond Doodle -->
+          <svg class="absolute -top-4 -right-2 w-8 h-8 text-amber-400 pointer-events-none" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3">
+            <rect x="10" y="10" width="20" height="20" rx="3" transform="rotate(45 20 20)"/>
+          </svg>
+
+          <!-- Bottom Left Pastel Sky Blue Circle -->
+          <div class="absolute -bottom-8 left-0 sm:left-2 w-32 h-32 md:w-40 md:h-40 bg-[#BAE7FF]/80 dark:bg-cyan-500/20 rounded-full -z-10 pointer-events-none"></div>
+
+          <!-- Bottom Left Blue Zigzag Doodle -->
+          <svg class="absolute -bottom-6 left-2 w-12 h-6 text-cyan-600 pointer-events-none" viewBox="0 0 60 20" fill="none" stroke="currentColor" stroke-width="3">
+            <path d="M5 10 L 15 3 L 25 15 L 35 3 L 45 15 L 55 5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          <!-- The 2x2 Grid Container -->
+          <div class="grid grid-cols-2 gap-4 sm:gap-5 w-full max-w-[480px] md:max-w-[500px] relative">
+            
+            <!-- CARD 1 (Top-Left): Light Blue Arch with Top-Left Curve -->
+            <div class="bg-[#BEE3FE] dark:bg-sky-900/60 rounded-tl-[110px] sm:rounded-tl-[130px] rounded-tr-2xl rounded-bl-2xl rounded-br-2xl p-2.5 sm:p-3 shadow-xl overflow-hidden aspect-square flex items-end justify-center group relative transition-transform hover:-translate-y-1.5">
+              <img src="../assets/img4.jpg" alt="Mentor Sarah" class="w-full h-full object-cover rounded-tl-[100px] sm:rounded-tl-[120px] rounded-tr-xl rounded-bl-xl rounded-br-xl group-hover:scale-105 transition duration-500">
+            </div>
+
+            <!-- CARD 2 (Top-Right): Pastel Pink Rounded Card -->
+            <div class="bg-[#FFCCD5] dark:bg-pink-900/60 rounded-3xl p-2.5 sm:p-3 shadow-xl overflow-hidden aspect-square flex items-end justify-center group relative transition-transform hover:-translate-y-1.5">
+              <img src="../assets/img5.jpg" alt="Mentor Alex" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition duration-500">
+            </div>
+
+            <!-- CARD 3 (Bottom-Left): Bright Yellow Rounded Card -->
+            <div class="bg-[#FFDF59] dark:bg-amber-800/60 rounded-3xl p-2.5 sm:p-3 shadow-xl overflow-hidden aspect-square flex items-end justify-center group relative transition-transform hover:-translate-y-1.5">
+              <img src="../assets/img6.jpg" alt="Mentor Elena" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition duration-500">
+            </div>
+
+            <!-- CARD 4 (Bottom-Right): Soft Lavender/Blue with Right D-Arch Curve -->
+            <div class="bg-[#E2E8F0] dark:bg-slate-700/60 rounded-tl-2xl rounded-bl-2xl rounded-tr-[110px] sm:rounded-tr-[130px] rounded-br-[110px] sm:rounded-br-[130px] p-2.5 sm:p-3 shadow-xl overflow-hidden aspect-square flex items-end justify-center group relative transition-transform hover:-translate-y-1.5">
+              <img src="../assets/img7.jpg" alt="Mentor David" class="w-full h-full object-cover rounded-tl-xl rounded-bl-xl rounded-tr-[100px] sm:rounded-tr-[120px] rounded-br-[100px] sm:rounded-br-[120px] group-hover:scale-105 transition duration-500">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1.5: SCROLLING CODE-CONCEPTS MARQUEE -->
+  <section class="marquee bg-amber-400 dark:bg-amber-500 py-3 border-y-4 border-white/70 dark:border-slate-800/60">
+    <div class="marquee-track font-display text-sm font-bold text-slate-900">
+      <div class="flex items-center gap-10 shrink-0 pr-10">
+        <span>Game Design</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Scratch Blocks</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Python Code</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Robotics &amp; Micro:bit</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Animations</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Artificial Intelligence</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Algorithms</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Debugging Adventures</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>1:4 Cohorts</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+      </div>
+      <div class="flex items-center gap-10 shrink-0 pr-10">
+        <span>Game Design</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Scratch Blocks</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Python Code</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Robotics &amp; Micro:bit</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Animations</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Artificial Intelligence</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Algorithms</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Debugging Adventures</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>1:4 Cohorts</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: KIT INVENTORY BREAKDOWN -->
+  <section class="py-16 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-widest bg-cyan-100 dark:bg-cyan-950/60 px-3 py-1 rounded-full">Delivered to Your Door</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-3">
+          What’s Inside the CodeJam Robotics Kit?
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">
+          Industrial-grade educational components built with safety in mind. No soldering required—snap and code!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-3 group">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Micro:bit v2 microcontroller board" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Micro:bit v2 Board</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">5x5 LED matrix, built-in microphone, speaker, magnetic compass, and Bluetooth radio.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-3 group">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=800&q=80" alt="Robotics sonar sensor hardware" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Ultrasonic Sonar</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Echo distance sensors allowing autonomous rovers to detect walls and navigate obstacle mazes.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-3 group">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=800&q=80" alt="Dual DC gear motors with wheels" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Dual DC Gear Motors</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">High-torque rubber wheels with differential steering and speed PWM controls.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-3 group">
+          <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&w=800&q=80" alt="Smart light sensor bulb" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Smart Light Sensors</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Infrared photoresistors to build automatic line-following racers and nightlights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: 3-STEP LEARNING WORKFLOW -->
+  <section class="py-16 bg-[#FBF8F1] dark:bg-[#0F1322]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+          The 3-Step Maker Learning Loop
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-md text-center space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mx-auto text-xl font-bold font-mono">01</div>
+          <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Snap & Assemble</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Hands-on spatial building that teaches basic circuit principles and motor kinematics safely.</p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-md text-center space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center mx-auto text-xl font-bold font-mono">02</div>
+          <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Program Logic</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Write visual blocks or Python scripts to define sensor thresholds, PID loops, and speed triggers.</p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-md text-center space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto text-xl font-bold font-mono">03</div>
+          <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Test & Compete</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Run rovers on real test tracks and showcase autonomous maze completion in cohort demo days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3B: MEET YOUR MENTOR MATCHES -->
+  <section class="py-16 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-widest bg-cyan-100 dark:bg-cyan-950/60 px-3 py-1 rounded-full">1-on-1 Mentor Matching</span>
+        <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3">
+          The Experts Behind Every Game &amp; Rover
+        </h2>
+        <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 mt-2">
+          Tell us your child's age, interests, and learning style — we hand-match them with a certified mentor who makes them light up.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl p-5 border border-slate-200/80 dark:border-slate-700 text-center space-y-3 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-3">
+            <img src="../assets/woman1.jpg" alt="Sarah Jenkins" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Sarah Jenkins</h3>
+          <div class="text-xs font-bold text-orange-600 dark:text-orange-400">Game &amp; Robot Storytelling</div>
+          <p class="text-xs text-slate-500">Turns every class into an adventure kids beg to continue the next day.</p>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl p-5 border border-slate-200/80 dark:border-slate-700 text-center space-y-3 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-3">
+            <img src="../assets/men1.jpg" alt="David Alvarez" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">David Alvarez</h3>
+          <div class="text-xs font-bold text-cyan-600 dark:text-cyan-400">Robotics &amp; Micro:bit Master</div>
+          <p class="text-xs text-slate-500">Mechatronics engineer who mentors kids through build-to-compete rovers.</p>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl p-5 border border-slate-200/80 dark:border-slate-700 text-center space-y-3 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-3">
+            <img src="../assets/woman3.jpg" alt="Elena Rostova" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Elena Rostova</h3>
+          <div class="text-xs font-bold text-green-600 dark:text-green-400">Python &amp; AI Explorer</div>
+          <p class="text-xs text-slate-500">Former software architect bringing real machine learning to teens.</p>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl p-5 border border-slate-200/80 dark:border-slate-700 text-center space-y-3 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-3">
+            <img src="../assets/men3.jpg" alt="Aria Chen" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Aria Chen</h3>
+          <div class="text-xs font-bold text-pink-600 dark:text-pink-400">Early STEM Coach</div>
+          <p class="text-xs text-slate-500">Master of Education in early childhood computational thinking.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-12">
+        <a href="booking.html" class="btn-meelo-orange px-8 py-3.5 rounded-full font-bold text-sm shadow-xl inline-flex items-center gap-2 hover:scale-105 transition">
+          Match My Child with a Mentor <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="about.html" class="inline-flex items-center gap-1 text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-cyan-600 transition">
+          Learn more about our faculty <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3C: PARENT & STUDENT STORIES -->
+  <section class="py-16 bg-[#FBF8F1] dark:bg-[#0F1322]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-widest bg-cyan-100 dark:bg-cyan-950/60 px-3 py-1 rounded-full">Families &amp; Students</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-3">
+          Real Stories from the CodeJam Lab
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="flex flex-col gap-4 p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md">
+          <div class="flex text-amber-400 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
+            "Her rover placed second in our regional Junior Robotics League round. She designed every line of the obstacle-avoidance code herself — we're still smiling."
+          </p>
+          <div class="mt-auto pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-orange-100 text-orange-600 font-bold flex items-center justify-center text-xs">LN</div>
+            <div>
+              <div class="text-xs font-bold text-slate-800 dark:text-white">Lily Nguyen</div>
+              <div class="text-[10px] text-slate-400">Parent of Robotics Student (Age 10)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md">
+          <div class="flex text-amber-400 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
+            "We asked for a patient, playful mentor and got Sarah. My son now 'debugs' his Lego builds and explains loops at the dinner table."
+          </p>
+          <div class="mt-auto pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-cyan-100 text-cyan-600 font-bold flex items-center justify-center text-xs">TP</div>
+            <div>
+              <div class="text-xs font-bold text-slate-800 dark:text-white">Tom Park</div>
+              <div class="text-[10px] text-slate-400">Parent of 1-on-1 Mentored Student (Age 7)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md">
+          <div class="flex text-amber-400 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
+            "After CodeJam demo day, my daughter founded her school's first STEM club. The mentor matching made all the difference."
+          </p>
+          <div class="mt-auto pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-green-100 text-green-600 font-bold flex items-center justify-center text-xs">KR</div>
+            <div>
+              <div class="text-xs font-bold text-slate-800 dark:text-white">Kia Reyes</div>
+              <div class="text-[10px] text-slate-400">Parent of Python Student (Age 13)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ROBOTICS COMPETITIONS -->
+  <section class="py-16 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-cyan-900 to-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="space-y-4">
+          <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Seasonal Hackathons</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold">CodeJam National Junior Robotics League</h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Every enrolled robotics student gets automatic entry to our quarterly virtual robotics tournaments. Kids stream their robot runs, get real feedback from university engineers, and win trophies!
+          </p>
+          <div class="pt-2">
+            <a href="contact.html" class="btn-meelo-yellow px-6 py-3 rounded-full font-bold text-xs inline-flex items-center gap-2">
+              Register for Next Hackathon →
+            </a>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 text-center">
+            <div class="font-heading text-3xl font-bold text-amber-400">1,200+</div>
+            <div class="text-[11px] text-slate-300 mt-1">Hackathon Competitors</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/10 text-center">
+            <div class="font-heading text-3xl font-bold text-cyan-400">45+</div>
+            <div class="text-[11px] text-slate-300 mt-1">STEM Trophy Winners</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: TUITION CTA -->
+  <section class="py-16 bg-[#FBF8F1] dark:bg-[#0F1322]">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+        Ready to Turn Your Child into a Junior Roboticist?
+      </h2>
+      <p class="text-sm text-slate-600 dark:text-slate-300">
+        Enroll in our Robotics Track today and receive the complete hardware kit shipped free directly to your doorstep.
+      </p>
+      <div class="pt-2">
+        <a href="pricing.html" class="btn-meelo-orange px-8 py-3.5 rounded-full font-bold text-sm shadow-xl inline-flex items-center gap-2">
+          View Robotics Tuition & Enroll <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="shared-footer"></div>
+
+  <script src="../js/navbar.js"></script>
+  <script src="../js/footer.js"></script>
+  <script src="../js/form-validation.js"></script>
+
+  <script>
+    (function () {
+      var rotatingEl = document.getElementById('rotatingWord2');
+      if (!rotatingEl) return;
+      var words = ['video games', 'story animations', 'smart robots', 'AI apps', 'retro arcades'];
+      var i = 0;
+      setInterval(function () {
+        i = (i + 1) % words.length;
+        rotatingEl.textContent = words[i];
+      }, 2200);
+    })();
+  </script>
+</body>
+</html>

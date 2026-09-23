@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeJam Kids Coding Academy | Scratch, Python & Robotics for Ages 6–14</title>
+  <meta name="description" content="CodeJam is a joyful children's coding academy where little minds grow through creative game design, Scratch block coding, Python programming, and hands-on robotics kits.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#EE5928',
+              yellow: '#F9B829',
+              pink: '#FA6B88',
+              green: '#88BD37',
+              blue: '#44B8C7',
+              purple: '#9063CD',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#FBF8F1] dark:bg-[#0F1322] text-slate-800 dark:text-slate-100 transition-colors">
+
+  <!-- Shared Reusable Navbar -->
+  <div id="shared-navbar"></div>
+
+  <!-- SECTION 1: HERO MONTAGE (PLAYFUL CODE-EDITOR + ROBOT MASCOT + ARCH COLLAGE) -->
+  <section class="relative py-24 md:py-32 overflow-hidden bg-[#FBF8F1] dark:bg-[#0F1322] transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-6 relative text-center lg:text-left flex flex-col items-center lg:items-start">
+
+          <!-- Doodle Accents (SVG) -->
+          <svg class="absolute -top-6 -left-6 w-12 h-12 text-amber-400 opacity-60 hidden lg:block pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6">
+            <path d="M10 50 Q 30 10 50 50 T 90 50" stroke-linecap="round"/>
+          </svg>
+
+          <span class="font-display inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 text-orange-600 dark:text-orange-400 px-4 py-1.5 rounded-full border-2 border-orange-200 dark:border-orange-800/60">
+            <i data-lucide="bot" class="w-4 h-4"></i> Live Kids Coding Classes, Ages 6–14
+          </span>
+
+          <div class="relative inline-block">
+            <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 dark:text-white leading-[1.1]">
+              Where Little Minds <br>
+              <span class="relative inline-block text-slate-900 dark:text-white">
+                Grow with Code
+                <!-- Doodle Underline Highlight -->
+                <svg class="absolute -bottom-2 left-0 w-full h-4 text-amber-400" viewBox="0 0 260 20" fill="none" preserveAspectRatio="none">
+                  <path d="M5 14 Q 70 3 130 12 T 255 8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+              </span>
+              & Care
+            </h1>
+
+            <!-- Butterfly/Loop Doodle -->
+            <svg class="inline-block w-9 h-9 text-cyan-500 absolute -top-4 -right-6 sm:-right-8 lg:right-28" viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M15 25 C5 15 5 5 15 15 C25 25 35 25 40 15 C45 5 35 5 30 15 C20 35 10 45 25 35" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            A safe, joyful academy where every child becomes a maker — building real video games and programming their own robots through play.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-5 pt-2">
+            <a href="pages/booking.html" class="btn-meelo-yellow px-8 py-3.5 rounded-full font-bold text-sm sm:text-base text-slate-900 shadow-xl hover:scale-105 transition animate-pulse-soft">
+              Get Started
+            </a>
+
+            <!-- Video Play Button -->
+            <button onclick="if(window.showToastMessage) window.showToastMessage('Loading live classroom tour...');" class="inline-flex items-center gap-3 text-slate-800 dark:text-slate-200 font-bold text-sm sm:text-base group">
+              <span class="w-12 h-12 rounded-full bg-cyan-100 dark:bg-cyan-900/60 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shadow-md group-hover:scale-110 transition">
+                <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
+              </span>
+              <span>See how it works</span>
+            </button>
+          </div>
+
+          <!-- Hero Quick Stats -->
+          <div class="pt-8 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-6 max-w-lg w-full mx-auto lg:mx-0 text-center">
+            <div>
+              <div class="font-heading text-3xl font-bold text-orange-600 dark:text-orange-400">98%</div>
+              <div class="text-xs font-semibold text-slate-500">Parent Rating</div>
+            </div>
+            <div>
+              <div class="font-heading text-3xl font-bold text-orange-600 dark:text-orange-400">50k+</div>
+              <div class="text-xs font-semibold text-slate-500">Games Built</div>
+            </div>
+            <div>
+              <div class="font-heading text-3xl font-bold text-orange-600 dark:text-orange-400">1:4</div>
+              <div class="text-xs font-semibold text-slate-500">Max Class Ratio</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero: Floating Code Window + Robot Mascot + Arch Collage -->
+        <div class="lg:col-span-5 relative max-w-[460px] w-full mx-auto lg:mx-0">
+
+          <!-- Background Doodle Shapes -->
+          <div class="absolute -top-8 right-0 w-36 h-36 md:w-44 md:h-44 bg-[#FFE58F]/80 dark:bg-amber-500/20 rounded-full -z-10 pointer-events-none"></div>
+          <svg class="absolute -bottom-6 left-2 w-12 h-6 text-cyan-600 pointer-events-none" viewBox="0 0 60 20" fill="none" stroke="currentColor" stroke-width="3">
+            <path d="M5 10 L 15 3 L 25 15 L 35 3 L 45 15 L 55 5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+          <!-- Arch Collage -->
+          <div class="grid grid-cols-2 gap-4 h-[420px] sm:h-[460px] md:h-[500px]">
+            <div class="row-span-2 bg-amber-400 rounded-t-[160px] rounded-b-[160px] p-2.5 shadow-2xl overflow-hidden relative group">
+              <img src="./assets/img1.jpg" alt="Boy coding with laptop" class="w-full h-full object-cover rounded-t-[150px] rounded-b-[150px] group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="bg-cyan-400 rounded-t-[100px] rounded-b-[24px] p-2 shadow-xl overflow-hidden relative group">
+              <img src="./assets/img2.jpg" alt="Girl excited in classroom" class="w-full h-full object-cover rounded-t-[92px] rounded-b-[18px] group-hover:scale-105 transition duration-500">
+            </div>
+            <div class="bg-orange-500 rounded-t-[24px] rounded-b-[100px] p-2 shadow-xl overflow-hidden relative group">
+              <img src="./assets/img3.jpg" alt="Girl coding with headphones" class="w-full h-full object-cover rounded-t-[18px] rounded-b-[92px] group-hover:scale-105 transition duration-500">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1.5: SCROLLING CODE-CONCEPTS MARQUEE -->
+  <section class="marquee bg-amber-400 dark:bg-amber-500 py-3 border-y-4 border-white/70 dark:border-slate-800/60">
+    <div class="marquee-track font-display text-sm font-bold text-slate-900">
+      <div class="flex items-center gap-10 shrink-0 pr-10">
+        <span>Game Design</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Scratch Blocks</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Python Code</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Robotics &amp; Micro:bit</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Animations</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Artificial Intelligence</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Algorithms</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Debugging Adventures</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>1:4 Cohorts</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+      </div>
+      <div class="flex items-center gap-10 shrink-0 pr-10">
+        <span>Game Design</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Scratch Blocks</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Python Code</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Robotics &amp; Micro:bit</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Animations</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Artificial Intelligence</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Algorithms</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>Debugging Adventures</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+        <span>1:4 Cohorts</span><i data-lucide="sparkle" class="w-4 h-4 text-slate-900/50"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: WHAT IS KIDS CODING? -->
+  <section class="py-16 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="font-display text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 px-4 py-1.5 rounded-full">What is Kids Coding?</span>
+        <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3">
+          Coding Is a Superpower — Every Kid Can Learn It
+        </h2>
+        <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 mt-2">
+          Kids coding means teaching children to give computers step-by-step instructions — through colorful drag-and-drop blocks first, then real typed code. At CodeJam we turn that journey into games, robots, and stories kids are proud to call their own.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Step 1: Block Coding -->
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="w-12 h-12 rounded-2xl bg-orange-100 dark:bg-orange-900/40 text-orange-600 flex items-center justify-center mb-4">
+            <i data-lucide="blocks" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Step 1 · Block Coding</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
+            Beginners 6–8 snap color-coded blocks together in Scratch Jr — no typing, no reading required. They make characters run, jump, and talk while secretly learning sequencing and logic.
+          </p>
+          <div class="mt-4 space-y-2 bg-white dark:bg-slate-700/60 rounded-2xl p-3 border border-slate-200/70 dark:border-slate-600">
+            <div class="flex items-center gap-2 rounded-xl bg-orange-500/90 text-white px-3 py-1.5 text-[11px] font-bold"><i data-lucide="play" class="w-3 h-3 fill-current"></i> move forward 10</div>
+            <div class="flex items-center gap-2 rounded-xl bg-amber-400/90 text-amber-950 px-3 py-1.5 text-[11px] font-bold"><i data-lucide="rotate-cw" class="w-3 h-3"></i> repeat 4 times</div>
+            <div class="flex items-center gap-2 rounded-xl bg-cyan-400/90 text-cyan-950 px-3 py-1.5 text-[11px] font-bold"><i data-lucide="music" class="w-3 h-3"></i> play meow sound</div>
+          </div>
+        </div>
+
+        <!-- Step 2: Real Code -->
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="w-12 h-12 rounded-2xl bg-green-100 dark:bg-green-900/40 text-green-600 flex items-center justify-center mb-4">
+            <i data-lucide="terminal" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Step 2 · Real Code</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
+            Ages 11–14 graduate to typed Python — the language pros use! Kids build arcade games, math puzzles, and apps while mastering loops, functions, and algorithms.
+          </p>
+          <div class="code-window mt-4 shadow-xl">
+            <div class="code-titlebar">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-filename">quiz_game.py</span>
+            </div>
+            <div class="code-body text-[10px]">
+              <div class="code-line"><span class="line-num">1</span><span class="code-command">for</span> <span class="code-prop">level</span> <span class="code-command">in</span> <span class="code-fn">range</span>(<span class="code-command">10</span>):</div>
+              <div class="code-line"><span class="line-num">2</span><span class="code-punc">&nbsp;&nbsp;</span><span class="code-fn">collectStars</span>()</div>
+              <div class="code-line"><span class="line-num">3</span><span class="code-punc">&nbsp;&nbsp;</span><span class="code-fn">beatLevel</span>()</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Robotics & AI -->
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-100 dark:bg-cyan-900/40 text-cyan-600 flex items-center justify-center mb-4">
+            <i data-lucide="bot" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display text-lg font-bold text-slate-900 dark:text-white">Step 3 · Robotics &amp; AI</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mt-2">
+            Code leaves the screen! Kids 8–14 assemble a Micro:bit robot kit at home, then program it to avoid walls, follow lines, and even recognize poses with beginner AI.
+          </p>
+          <div class="mt-4 bg-gradient-to-br from-cyan-900 to-slate-900 rounded-2xl p-4 flex items-center justify-between text-white relative overflow-hidden">
+            <div class="text-[11px] font-bold space-y-1">
+              <div class="flex items-center gap-1.5"><i data-lucide="radar" class="w-3.5 h-3.5 text-cyan-300"></i> Sonar scans wall</div>
+              <div class="flex items-center gap-1.5"><i data-lucide="move" class="w-3.5 h-3.5 text-amber-300"></i> Rover steers away</div>
+            </div>
+            <svg class="w-16 h-16 animate-bob" viewBox="0 0 120 132" fill="none" aria-hidden="true">
+              <circle cx="60" cy="19" r="7" fill="#FA6B88"/>
+              <line x1="60" y1="26" x2="60" y2="44" stroke="#8FD5DC" stroke-width="5" stroke-linecap="round"/>
+              <rect x="16" y="44" width="88" height="62" rx="28" fill="#8FD5DC"/>
+              <circle cx="41" cy="72" r="8" fill="#fff"/><circle cx="79" cy="72" r="8" fill="#fff"/>
+              <circle cx="39.5" cy="72" r="3" fill="#1E2235"/><circle cx="77.5" cy="72" r="3" fill="#1E2235"/>
+              <path d="M50 88 Q 60 96 70 88" stroke="#fff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+              <rect x="34" y="106" width="52" height="20" rx="10" fill="#F9B829"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plain-talk sticky note for parents -->
+      <div class="mt-10 max-w-3xl mx-auto bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-200 dark:border-amber-700/60 rounded-2xl p-5 flex items-start gap-4 rotate-[-0.6deg] shadow-sm">
+        <div class="w-10 h-10 rounded-2xl bg-amber-400 text-amber-950 flex items-center justify-center flex-shrink-0">
+          <i data-lucide="message-circle-heart" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="font-display text-xs font-bold uppercase tracking-widest text-amber-700 dark:text-amber-300">In plain terms for parents</div>
+          <p class="text-xs md:text-sm text-slate-700 dark:text-slate-200 leading-relaxed mt-1">
+            Think of CodeJam as a friendly playground where kids learn the language computers speak — so they stop only <em>consuming</em> games and start <strong>creating</strong> them.
+          </p>
+          <a href="pages/services.html" class="inline-flex items-center gap-1 text-xs font-bold text-orange-600 dark:text-orange-400 mt-2 hover:underline">
+            Explore our coding tracks <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: TRUST & PEDAGOGY CARDS -->
+  <section class="py-16 bg-[#FBF8F1] dark:bg-[#0F1322] border-y border-orange-500/10 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 px-3 py-1 rounded-full">Our Core Promise</span>
+        <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3">
+          Trusted by Families & Recognized for Quality Care
+        </h2>
+        <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 mt-2">
+          We combine accredited pedagogy with playful project milestones so children develop logical thinking while smiling.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg border border-slate-100 dark:border-slate-800 flex flex-col justify-end group">
+          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80" alt="Caring educators" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative z-10 p-6 bg-[#C4E491] text-emerald-950 rounded-t-[80px] shadow-lg">
+            <h3 class="font-heading text-2xl font-bold mb-1">Certified & Caring Educators</h3>
+            <p class="text-xs leading-relaxed opacity-90">Every mentor is background-checked and certified in child psychology and computer science pedagogy.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-3xl p-8 shadow-xl flex flex-col justify-center items-center text-center space-y-4">
+          <div class="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+            <i data-lucide="shield-check" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-script text-3xl font-normal leading-snug">Safe & Inspiring<br>Learning Environment</h3>
+          <p class="text-xs text-white/90 leading-relaxed max-w-xs">
+            Small live cohorts (max 4 students) with zero-tolerance safety policies, weekly recorded video replays, and real-time parent progress notes.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg border border-slate-100 dark:border-slate-800 flex flex-col justify-end group">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=80" alt="Play based learning" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative z-10 p-6 bg-[#FFA7BA] text-rose-950 rounded-t-[80px] shadow-lg">
+            <h3 class="font-heading text-2xl font-bold mb-1">Play-Based Learning Approach</h3>
+            <p class="text-xs leading-relaxed opacity-90">We teach sequencing through cartoon animation, video game physics, music synthesis, and autonomous robot rovers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: ALLIANCES BANNER -->
+  <section class="py-10 bg-[#FBF8F1] dark:bg-[#0F1322]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-amber-400 dark:bg-amber-500 text-slate-900 rounded-3xl p-8 shadow-xl text-center">
+        <h4 class="font-heading text-2xl font-bold mb-6">Our Educational Alliances & Certified Partners</h4>
+        <div class="flex flex-wrap items-center justify-around gap-6">
+          <div class="flex items-center gap-2 font-bold text-base"><i data-lucide="code" class="w-5 h-5"></i> Scratch MIT</div>
+          <div class="flex items-center gap-2 font-bold text-base"><i data-lucide="terminal" class="w-5 h-5"></i> Python Institute</div>
+          <div class="flex items-center gap-2 font-bold text-base"><i data-lucide="cpu" class="w-5 h-5"></i> Raspberry Pi</div>
+          <div class="flex items-center gap-2 font-bold text-base"><i data-lucide="blocks" class="w-5 h-5"></i> LEGO Education</div>
+          <div class="flex items-center gap-2 font-bold text-base"><i data-lucide="globe" class="w-5 h-5"></i> Code.org</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4A: MEET THE MENTORS -->
+  <section class="py-16 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 px-3 py-1 rounded-full">Meet the Mentors</span>
+        <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3">
+          Certified Coaches Kids Actually Adore
+        </h2>
+        <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 mt-2">
+          Every CodeJam mentor is background-checked, trained in child-centered pedagogy, and genuinely loves helping kids fall in love with building.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl p-5 border border-slate-200/80 dark:border-slate-700 text-center space-y-3 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-3">
+            <img src="./assets/woman1.jpg" alt="Sarah Jenkins" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Sarah Jenkins</h3>
+          <div class="text-xs font-bold text-orange-600 dark:text-orange-400">Lead Scratch &amp; Game Mentor</div>
+          <p class="text-xs text-slate-500">B.S. in Computer Science (MIT). 6+ years of youth game-dev coaching.</p>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl p-5 border border-slate-200/80 dark:border-slate-700 text-center space-y-3 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-3">
+            <img src="./assets/men1.jpg" alt="David Alvarez" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">David Alvarez</h3>
+          <div class="text-xs font-bold text-cyan-600 dark:text-cyan-400">Head of Robotics &amp; IoT</div>
+          <p class="text-xs text-slate-500">Mechatronics engineer and LEGO robotics tournament referee.</p>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl p-5 border border-slate-200/80 dark:border-slate-700 text-center space-y-3 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-3">
+            <img src="./assets/woman3.jpg" alt="Elena Rostova" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Elena Rostova</h3>
+          <div class="text-xs font-bold text-green-600 dark:text-green-400">Senior Python Specialist</div>
+          <p class="text-xs text-slate-500">Former software architect who makes algorithms feel like magic tricks.</p>
+        </div>
+
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-3xl p-5 border border-slate-200/80 dark:border-slate-700 text-center space-y-3 shadow-md hover:-translate-y-1.5 transition duration-300 group">
+          <div class="aspect-square rounded-2xl overflow-hidden mb-3">
+            <img src="./assets/men3.jpg" alt="Aria Chen" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Aria Chen</h3>
+          <div class="text-xs font-bold text-pink-600 dark:text-pink-400">Early Tech Education M.Ed</div>
+          <p class="text-xs text-slate-500">Master of Education in early childhood computational thinking.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="pages/booking.html" class="btn-meelo-orange px-8 py-3.5 rounded-full font-bold text-sm shadow-xl inline-flex items-center gap-2 hover:scale-105 transition">
+          Book a Trial with a Mentor <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="pages/about.html" class="ml-3 inline-flex items-center gap-1 text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-orange-600 transition">
+          Meet our full faculty <i data-lucide="chevron-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4B: SKILLS KIDS BUILD -->
+  <section class="py-16 bg-[#FBF8F1] dark:bg-[#0F1322]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 px-3 py-1 rounded-full">Life Skills in Disguise</span>
+          <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3">
+            Skills Your Child Will Build
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-sm border-l-2 border-orange-500 pl-4">
+          Coding is the vehicle — these are the transferable superpowers kids carry into school and life.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md hover:-translate-y-1.5 transition duration-300 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 flex items-center justify-center">
+            <i data-lucide="brain" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Logical Thinking</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Sequencing, conditionals, and loops taught through puzzles kids genuinely want to solve.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md hover:-translate-y-1.5 transition duration-300 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-pink-100 dark:bg-pink-900/40 text-pink-600 flex items-center justify-center">
+            <i data-lucide="palette" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Creative Confidence</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Original characters, art, sound, and stories — kids design every pixel of their own projects.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md hover:-translate-y-1.5 transition duration-300 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-900/40 text-amber-600 flex items-center justify-center">
+            <i data-lucide="bug" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Resilient Debugging</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Mistakes become detective missions, building patience, focus, and quiet self-belief.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md hover:-translate-y-1.5 transition duration-300 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-green-100 dark:bg-green-900/40 text-green-600 flex items-center justify-center">
+            <i data-lucide="calculator" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Math &amp; Physics Intuition</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Coordinates, angles, gravity, and variables — concepts that feel like play, not homework.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md hover:-translate-y-1.5 transition duration-300 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 flex items-center justify-center">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Collaboration &amp; Communication</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Pair programming and demo talks teach kids to explain ideas clearly and cheer on teammates.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md hover:-translate-y-1.5 transition duration-300 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-orange-100 dark:bg-orange-900/40 text-orange-600 flex items-center justify-center">
+            <i data-lucide="shield" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">Safe Digital Citizenship</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Guardian-managed sandboxes, zero ads, and positive screen habits from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: 4-COLOR PROGRAMS GRID -->
+  <section class="py-16 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 px-3 py-1 rounded-full">Age-Appropriate Stages</span>
+          <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3">
+            Programs Designed for Every Stage
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-sm border-l-2 border-orange-500 pl-4">
+          Scaffolded curricula that turn screen time into creative thinking, algorithm mastery, and confident problem-solving.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1 (Orange) -->
+        <div class="bg-[#EE5928] text-white rounded-3xl p-6 flex flex-col justify-between min-h-[380px] shadow-lg hover:-translate-y-2 transition duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-4"><i data-lucide="palette" class="w-6 h-6"></i></div>
+            <div class="text-[11px] font-bold uppercase tracking-widest text-center opacity-85">Ages 6 to 8</div>
+            <h3 class="font-heading text-2xl font-bold text-center mt-1 mb-2">Scratch Jr Creative</h3>
+            <p class="text-xs text-center opacity-90 leading-relaxed">Visual block animations, funny sound effects, and drag-and-drop logic stories.</p>
+          </div>
+          <a href="pages/service-details.html?id=scratch-jr" class="mt-6 bg-white text-slate-900 text-xs font-bold py-2.5 px-4 rounded-full text-center hover:bg-slate-900 hover:text-white transition">
+            Learn More →
+          </a>
+        </div>
+
+        <!-- Card 2 (Pink) -->
+        <div class="bg-[#F988A2] text-white rounded-3xl p-6 flex flex-col justify-between min-h-[380px] shadow-lg hover:-translate-y-2 transition duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-4"><i data-lucide="gamepad-2" class="w-6 h-6"></i></div>
+            <div class="text-[11px] font-bold uppercase tracking-widest text-center opacity-85">Ages 8 to 10</div>
+            <h3 class="font-heading text-2xl font-bold text-center mt-1 mb-2">Scratch 3.0 Arcade</h3>
+            <p class="text-xs text-center opacity-90 leading-relaxed">2D platformers, space dodgers, gravity physics, and high-score leaderboards.</p>
+          </div>
+          <a href="pages/service-details.html?id=scratch-arcade" class="mt-6 bg-white text-slate-900 text-xs font-bold py-2.5 px-4 rounded-full text-center hover:bg-slate-900 hover:text-white transition">
+            Learn More →
+          </a>
+        </div>
+
+        <!-- Card 3 (Green) -->
+        <div class="bg-[#A6C96C] text-emerald-950 rounded-3xl p-6 flex flex-col justify-between min-h-[380px] shadow-lg hover:-translate-y-2 transition duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-white/40 flex items-center justify-center mx-auto mb-4 text-emerald-900"><i data-lucide="terminal" class="w-6 h-6"></i></div>
+            <div class="text-[11px] font-bold uppercase tracking-widest text-center opacity-85">Ages 11 to 14</div>
+            <h3 class="font-heading text-2xl font-bold text-center mt-1 mb-2">Python Game Dev</h3>
+            <p class="text-xs text-center opacity-90 leading-relaxed">Text-based Python 3, Pygame graphics, math functions, and clean syntax debugging.</p>
+          </div>
+          <a href="pages/service-details.html?id=python-game-dev" class="mt-6 bg-emerald-950 text-white text-xs font-bold py-2.5 px-4 rounded-full text-center hover:bg-white hover:text-emerald-950 transition">
+            Learn More →
+          </a>
+        </div>
+
+        <!-- Card 4 (Blue) -->
+        <div class="bg-[#8FD5DC] text-cyan-950 rounded-3xl p-6 flex flex-col justify-between min-h-[380px] shadow-lg hover:-translate-y-2 transition duration-300">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-white/40 flex items-center justify-center mx-auto mb-4 text-cyan-900"><i data-lucide="bot" class="w-6 h-6"></i></div>
+            <div class="text-[11px] font-bold uppercase tracking-widest text-center opacity-85">Ages 8 to 14</div>
+            <h3 class="font-heading text-2xl font-bold text-center mt-1 mb-2">Robotics & AI Kits</h3>
+            <p class="text-xs text-center opacity-90 leading-relaxed">Physical hardware kit mailed home. Micro:bit rovers, ultrasonic sonar, and sensors.</p>
+          </div>
+          <a href="pages/service-details.html?id=robotics-iot" class="mt-6 bg-cyan-950 text-white text-xs font-bold py-2.5 px-4 rounded-full text-center hover:bg-white hover:text-cyan-950 transition">
+            Learn More →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4C: HOW LEARNING WORKS -->
+  <section class="py-16 bg-[#FBF8F1] dark:bg-[#0F1322]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 px-3 py-1 rounded-full">The CodeJam Way</span>
+        <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3">
+          A Week in the Life of a CodeJam Kid
+        </h2>
+        <p class="text-sm md:text-base text-slate-600 dark:text-slate-300 mt-2">
+          A proven weekly rhythm that keeps young builders curious, challenged, and proud of what they make.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-md text-center space-y-4 hover:-translate-y-1.5 transition duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mx-auto text-xl font-bold font-mono">01</div>
+          <div class="w-12 h-12 rounded-2xl bg-orange-50 dark:bg-slate-700 text-orange-500 flex items-center justify-center mx-auto">
+            <i data-lucide="video" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Live Mini-Class</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Twice a week, 45-minute live classes in cozy cohorts of 4 with a dedicated mentor.</p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-md text-center space-y-4 hover:-translate-y-1.5 transition duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center mx-auto text-xl font-bold font-mono">02</div>
+          <div class="w-12 h-12 rounded-2xl bg-cyan-50 dark:bg-slate-700 text-cyan-500 flex items-center justify-center mx-auto">
+            <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Build Real Projects</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Games, animations, quizzes, and robots — real products kids can share with family and friends.</p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-md text-center space-y-4 hover:-translate-y-1.5 transition duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mx-auto text-xl font-bold font-mono">03</div>
+          <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-slate-700 text-amber-500 flex items-center justify-center mx-auto">
+            <i data-lucide="list-checks" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Replays &amp; Progress</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Every session is recorded. Parents get weekly notes, project screenshots, and skill badges.</p>
+        </div>
+
+        <div class="p-8 rounded-3xl bg-white dark:bg-slate-800 shadow-md text-center space-y-4 hover:-translate-y-1.5 transition duration-300">
+          <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center mx-auto text-xl font-bold font-mono">04</div>
+          <div class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-slate-700 text-purple-500 flex items-center justify-center mx-auto">
+            <i data-lucide="trophy" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Showcase &amp; Compete</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-300">Demo days, leaderboards, and quarterly hackathons turn learning into celebration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4D: TOP PARENT QUESTIONS -->
+  <section class="py-16 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 px-3 py-1 rounded-full">Quick Answers</span>
+        <h2 class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-3">
+          Top Questions from Parents
+        </h2>
+      </div>
+
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="book-open" class="w-4 h-4 text-orange-500"></i> Do kids need prior coding experience?
+          </h3>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Not at all. Beginner pathways exist for every age — Scratch Jr (6–8), Scratch Arcade (8–10), and Python (11–14).</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="users" class="w-4 h-4 text-cyan-500"></i> What is the student-to-teacher ratio?
+          </h3>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Cohorts never exceed 4 students per coach, so every child gets hands-on code review in every single session.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="video" class="w-4 h-4 text-green-500"></i> What happens if we miss a class?
+          </h3>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">All live sessions are recorded to your student portal, and kids can drop into weekly open mentor office hours.</p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-2">
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4 text-purple-500"></i> How does the 30-Day Happiness Guarantee work?
+          </h3>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">If your child isn't completely delighted after the first 4 classes, we refund 100% of tuition — no questions asked.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="pages/FAQ.html" class="inline-flex items-center gap-2 text-orange-600 dark:text-orange-400 font-bold text-sm hover:underline">
+          Read all frequently asked questions <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: TESTIMONIALS & PARENT REVIEWS -->
+  <section class="py-16 bg-[#FBF8F1] dark:bg-[#0F1322]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 px-3 py-1 rounded-full">Parent Stories</span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-3">
+          What Parents Say About CodeJam
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="flex flex-col gap-4 p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md">
+          <div class="flex text-amber-400 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
+            "My 8-year-old was obsessed with video games. Within 6 weeks at CodeJam, he built his own space shooter game and explained the coordinate system to his grandpa!"
+          </p>
+          <div class="mt-auto pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-orange-100 text-orange-600 font-bold flex items-center justify-center text-xs">JS</div>
+            <div>
+              <div class="text-xs font-bold text-slate-800 dark:text-white">Jennifer Smith</div>
+              <div class="text-[10px] text-slate-400">Parent of Scratch Student (Age 8)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md">
+          <div class="flex text-amber-400 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
+            "The 1:4 student-to-teacher ratio is real. Coach Elena patiently debugged my daughter’s Python loops and gave her the confidence to join her school’s STEM club."
+          </p>
+          <div class="mt-auto pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-green-100 text-green-600 font-bold flex items-center justify-center text-xs">MR</div>
+            <div>
+              <div class="text-xs font-bold text-slate-800 dark:text-white">Marcus Reed</div>
+              <div class="text-[10px] text-slate-400">Parent of Python Student (Age 12)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md">
+          <div class="flex text-amber-400 gap-1"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 italic leading-relaxed">
+            "Receiving the Micro:bit robotics kit in the mail made my son feel like a real inventor. The weekly projects kept him engaged the entire semester."
+          </p>
+          <div class="mt-auto pt-2 border-t border-slate-100 dark:border-slate-700 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-cyan-100 text-cyan-600 font-bold flex items-center justify-center text-xs">CL</div>
+            <div>
+              <div class="text-xs font-bold text-slate-800 dark:text-white">Clara Lin</div>
+              <div class="text-[10px] text-slate-400">Parent of Robotics Student (Age 10)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: CTA BANNER -->
+  <section class="py-12 bg-white dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-orange-500 via-pink-500 to-amber-400 text-white rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-3 max-w-xl text-center md:text-left">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Give Your Child the Superpower of Code</h2>
+          <p class="text-xs sm:text-sm text-white/90">Book a free 45-minute live 1-on-1 trial class with our lead mentors. No credit card required.</p>
+        </div>
+        <a href="pages/booking.html" class="bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100 px-8 py-4 rounded-full font-bold text-sm sm:text-base shadow-2xl flex-shrink-0 inline-flex items-center gap-2 hover:scale-105 transition-all">
+          <i data-lucide="sparkles" class="w-4 h-4 text-amber-400 dark:text-orange-500"></i> Book Free Trial Class
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Reusable Footer -->
+  <div id="shared-footer"></div>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/form-validation.js"></script>
+
+  <script>
+    (function () {
+      var rotatingEl = document.getElementById('rotatingWord');
+      if (!rotatingEl) return;
+      var words = ['video games', 'story animations', 'smart robots', 'AI apps', 'retro arcades'];
+      var i = 0;
+      setInterval(function () {
+        i = (i + 1) % words.length;
+        rotatingEl.textContent = words[i];
+      }, 2200);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Courses & STEM Programs | CodeJam Kids Coding Academy</title>
+  <meta name="description" content="Explore our full curriculum catalog: Scratch Jr, Scratch Arcade, Python 3, Robotics & Micro:bit, and AI machine learning courses for ages 6 to 14.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#EE5928',
+              yellow: '#F9B829',
+              pink: '#FA6B88',
+              green: '#88BD37',
+              blue: '#44B8C7',
+              purple: '#9063CD',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#FBF8F1] dark:bg-[#0F1322] text-slate-800 dark:text-slate-100 transition-colors">
+  
+  <div id="shared-navbar"></div>
+
+  <!-- SECTION 1: HEADER BANNER -->
+  <section class="py-20 md:py-28 bg-orange-50/40 dark:bg-slate-800/40 border-b border-orange-500/10 flex items-center min-h-[340px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 text-center lg:text-left space-y-4">
+          <span class="inline-block text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-widest bg-orange-100 dark:bg-orange-950/60 px-3 py-1 rounded-full">Course Catalog</span>
+          <h1 class="font-heading text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
+            Age-Appropriate Programs for Every Young Technologist
+          </h1>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0">
+            From first-time block animators to Python game developers and robot builders. Click any course to view the full 8-week syllabus!
+          </p>
+        </div>
+        <div class="lg:col-span-5 hidden lg:flex justify-center">
+          <div class="relative">
+            <div class="absolute -top-8 -left-10 w-36 h-36 bg-cyan-200/60 dark:bg-cyan-500/20 rounded-full -z-10"></div>
+            <svg class="absolute -top-4 -right-8 w-10 h-10 text-amber-400 rotate-12" viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M15 25 C5 15 5 5 15 15 C25 25 35 25 40 15 C45 5 35 5 30 15 C20 35 10 45 25 35" stroke-linecap="round"/>
+            </svg>
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Young coder writing a program on screen" class="w-72 h-80 object-cover rounded-t-[140px] rounded-b-[44px] border-4 border-white dark:border-slate-700 shadow-2xl">
+            <span class="absolute -bottom-5 -left-5 w-24 h-24 bg-amber-300/50 dark:bg-amber-500/20 rounded-3xl rotate-12 -z-10"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: COMPLETE SERVICES GRID -->
+  <section class="py-16 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Track 1: Scratch Jr -->
+        <div class="p-6 rounded-3xl bg-pink-50/40 dark:bg-slate-800 border border-pink-200/60 dark:border-slate-700 shadow-md flex flex-col justify-between hover:shadow-xl hover:-translate-y-1.5 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-pink-700 dark:text-pink-300 bg-pink-100 dark:bg-pink-900/40 px-3 py-1 rounded-full">Ages 6 to 8</span>
+              <span class="text-xs font-semibold text-slate-400">8-Week Cohort</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Scratch Jr & Creative Logic</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Drag-and-drop icon blocks, fairy tale storytelling, cartoon animation, and recording voice actors.
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-600 dark:text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> No typing required</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> Spatial coordinates & loops</li>
+            </ul>
+          </div>
+          <div class="pt-6 border-t border-pink-200/40 dark:border-slate-700 flex items-center justify-between mt-4">
+            <span class="font-heading text-2xl font-bold text-pink-600">$89<span class="text-xs text-slate-400 font-normal">/mo</span></span>
+            <a href="service-details.html?id=scratch-jr" class="btn-meelo-orange px-4 py-2 rounded-full text-xs font-bold shadow">
+              View Syllabus →
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 2: Scratch Arcade -->
+        <div class="p-6 rounded-3xl bg-orange-50/40 dark:bg-slate-800 border border-orange-200/60 dark:border-slate-700 shadow-md flex flex-col justify-between hover:shadow-xl hover:-translate-y-1.5 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-orange-700 dark:text-orange-300 bg-orange-100 dark:bg-orange-900/40 px-3 py-1 rounded-full">Ages 8 to 10</span>
+              <span class="text-xs font-semibold text-slate-400">8-Week Cohort</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Scratch 3.0 Arcade Dev</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              2D platformers, jump velocity physics, enemy arrays, health points, and publishing games to the web.
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-600 dark:text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> Variables & broadcasting</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> 2D jump gravity & collision</li>
+            </ul>
+          </div>
+          <div class="pt-6 border-t border-orange-200/40 dark:border-slate-700 flex items-center justify-between mt-4">
+            <span class="font-heading text-2xl font-bold text-orange-600">$129<span class="text-xs text-slate-400 font-normal">/mo</span></span>
+            <a href="service-details.html?id=scratch-arcade" class="btn-meelo-orange px-4 py-2 rounded-full text-xs font-bold shadow">
+              View Syllabus →
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 3: Python Game Dev -->
+        <div class="p-6 rounded-3xl bg-green-50/40 dark:bg-slate-800 border border-green-200/60 dark:border-slate-700 shadow-md flex flex-col justify-between hover:shadow-xl hover:-translate-y-1.5 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-green-700 dark:text-green-300 bg-green-100 dark:bg-green-900/40 px-3 py-1 rounded-full">Ages 11 to 14</span>
+              <span class="text-xs font-semibold text-slate-400">8-Week Cohort</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Python Game & App Builder</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Transition from blocks to text code. Pygame graphics, text RPG adventures, list dictionaries, and clean syntax.
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-600 dark:text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> AP Computer Science prep</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> Standalone Python 3 games</li>
+            </ul>
+          </div>
+          <div class="pt-6 border-t border-green-200/40 dark:border-slate-700 flex items-center justify-between mt-4">
+            <span class="font-heading text-2xl font-bold text-green-600">$129<span class="text-xs text-slate-400 font-normal">/mo</span></span>
+            <a href="service-details.html?id=python-game-dev" class="btn-meelo-orange px-4 py-2 rounded-full text-xs font-bold shadow">
+              View Syllabus →
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 4: Robotics & Micro:bit -->
+        <div class="p-6 rounded-3xl bg-cyan-50/40 dark:bg-slate-800 border border-cyan-200/60 dark:border-slate-700 shadow-md flex flex-col justify-between hover:shadow-xl hover:-translate-y-1.5 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-cyan-700 dark:text-cyan-300 bg-cyan-100 dark:bg-cyan-900/40 px-3 py-1 rounded-full">Ages 8 to 14</span>
+              <span class="text-xs font-semibold text-slate-400">Kit Included</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Robotics & Micro:bit Lab</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Complete hardware kit shipped home. Motors, ultrasonic sonar, radio broadcasting, and obstacle navigation.
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-600 dark:text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> Free $120 hardware kit</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> Virtual tournament entry</li>
+            </ul>
+          </div>
+          <div class="pt-6 border-t border-cyan-200/40 dark:border-slate-700 flex items-center justify-between mt-4">
+            <span class="font-heading text-2xl font-bold text-cyan-600">$169<span class="text-xs text-slate-400 font-normal">/mo</span></span>
+            <a href="service-details.html?id=robotics-iot" class="btn-meelo-orange px-4 py-2 rounded-full text-xs font-bold shadow">
+              View Syllabus →
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 5: AI & Machine Learning -->
+        <div class="p-6 rounded-3xl bg-purple-50/40 dark:bg-slate-800 border border-purple-200/60 dark:border-slate-700 shadow-md flex flex-col justify-between hover:shadow-xl hover:-translate-y-1.5 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-900/40 px-3 py-1 rounded-full">Ages 10 to 14</span>
+              <span class="text-xs font-semibold text-slate-400">8-Week Cohort</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">AI & Machine Learning</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Train image classifiers, pose gesture games with webcams, natural language processing chatbots, and ethical AI.
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-600 dark:text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> Computer vision models</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> Conversational AI bots</li>
+            </ul>
+          </div>
+          <div class="pt-6 border-t border-purple-200/40 dark:border-slate-700 flex items-center justify-between mt-4">
+            <span class="font-heading text-2xl font-bold text-purple-600">$149<span class="text-xs text-slate-400 font-normal">/mo</span></span>
+            <a href="service-details.html?id=ai-explorers" class="btn-meelo-orange px-4 py-2 rounded-full text-xs font-bold shadow">
+              View Syllabus →
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 6: Custom 1-on-1 -->
+        <div class="p-6 rounded-3xl bg-amber-50/40 dark:bg-slate-800 border border-amber-200/60 dark:border-slate-700 shadow-md flex flex-col justify-between hover:shadow-xl hover:-translate-y-1.5 transition">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-amber-800 dark:text-amber-300 bg-amber-100 dark:bg-amber-900/40 px-3 py-1 rounded-full">All Ages (6–14)</span>
+              <span class="text-xs font-semibold text-slate-400">1-on-1 Private</span>
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Private 1-on-1 Mentorship</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Custom tailored pacing for students with unique goals, science fair projects, or accelerated learning tracks.
+            </p>
+            <ul class="text-xs space-y-1.5 text-slate-600 dark:text-slate-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> Flexible scheduling</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i> Dedicated lead mentor</li>
+            </ul>
+          </div>
+          <div class="pt-6 border-t border-amber-200/40 dark:border-slate-700 flex items-center justify-between mt-4">
+            <span class="font-heading text-2xl font-bold text-amber-600">Custom</span>
+            <a href="contact.html" class="btn-meelo-yellow px-4 py-2 rounded-full text-xs font-bold shadow">
+              Contact Us →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: INCLUDED WITH EVERY TRACK -->
+  <section class="py-16 bg-[#FBF8F1] dark:bg-[#0F1322]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+          Included in Every Student's Membership
+        </h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <i data-lucide="video" class="w-8 h-8 mx-auto text-orange-500 mb-2"></i>
+          <div class="text-sm font-bold text-slate-900 dark:text-white">Live Small Cohorts</div>
+          <div class="text-xs text-slate-400 mt-1">4 students max</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <i data-lucide="cloud" class="w-8 h-8 mx-auto text-cyan-500 mb-2"></i>
+          <div class="text-sm font-bold text-slate-900 dark:text-white">Cloud Code Lab</div>
+          <div class="text-xs text-slate-400 mt-1">Runs in browser</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <i data-lucide="award" class="w-8 h-8 mx-auto text-amber-500 mb-2"></i>
+          <div class="text-sm font-bold text-slate-900 dark:text-white">XP & Badges</div>
+          <div class="text-xs text-slate-400 mt-1">Gamified learning</div>
+        </div>
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <i data-lucide="shield-check" class="w-8 h-8 mx-auto text-green-500 mb-2"></i>
+          <div class="text-sm font-bold text-slate-900 dark:text-white">Parent Reports</div>
+          <div class="text-xs text-slate-400 mt-1">Weekly feedback</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: HOW TO CHOOSE -->
+  <section class="py-16 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+        Not Sure Which Track Fits Your Child?
+      </h2>
+      <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        Our educational advisors offer free 15-minute level assessments to match your child's age, interests, and prior experience with the perfect curriculum track.
+      </p>
+      <a href="contact.html" class="btn-meelo-orange px-8 py-3.5 rounded-full font-bold text-sm shadow-xl inline-flex items-center gap-2">
+        <i data-lucide="phone-call" class="w-4 h-4"></i> Request Free Placement Call
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 5: GUARANTEE -->
+  <section class="py-8 bg-slate-50 dark:bg-slate-800/50 text-center text-xs text-slate-500">
+    <p>All enrollments include our 100% Risk-Free 30-Day Money Back Happiness Guarantee.</p>
+  </section>
+
+  <div id="shared-footer"></div>
+
+  <script src="../js/navbar.js"></script>
+  <script src="../js/footer.js"></script>
+  <script src="../js/form-validation.js"></script>
+</body>
+</html>

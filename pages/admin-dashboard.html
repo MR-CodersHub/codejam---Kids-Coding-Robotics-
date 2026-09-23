@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | CodeJam Kids Coding Academy</title>
+  <meta name="description" content="Academy administration portal for cohort scheduling, teacher management, student progress, and project approvals.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#EE5928',
+              yellow: '#F9B829',
+              pink: '#FA6B88',
+              green: '#88BD37',
+              blue: '#44B8C7',
+              purple: '#9063CD',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#FBF8F1] dark:bg-[#0F1322] text-slate-800 dark:text-slate-100 transition-colors">
+  
+  <div id="dashboard-navbar"></div>
+
+  <!-- Main Admin Dashboard Wrapper -->
+  <main class="pt-[86px] pb-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    
+    <!-- Top Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 text-xs text-slate-500 mb-1">
+          <span class="text-purple-600 dark:text-purple-400 font-bold uppercase tracking-wider">Admin Portal</span>
+          <span>•</span>
+          <span>Fall 2026 Term</span>
+        </div>
+        <h1 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+          Academy Operations & Cohort Hub
+        </h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="login.html" class="btn-meelo-orange px-5 py-2.5 rounded-full text-xs font-bold shadow-md inline-flex items-center gap-1.5 hover:scale-105 transition">
+           Logout
+        </a>
+      </div>
+    </div>
+
+    <!-- 4 High-Level Metric Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Active Students</span>
+        </div>
+        <div class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">1,420</div>
+        <div class="text-[11px] text-green-600 font-bold flex items-center gap-1">
+          +14% vs last semester
+        </div>
+      </div>
+
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Live Cohorts Running</span>
+          
+        </div>
+        <div class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">84</div>
+        <div class="text-[11px] text-cyan-600 font-bold">1:4 max student-mentor ratio</div>
+      </div>
+
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Monthly Recurring Tuition</span>
+        
+        </div>
+        <div class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">$148,200</div>
+        <div class="text-[11px] text-green-600 font-bold">96.8% renewal rate</div>
+      </div>
+
+      <div class="p-6 rounded-3xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 shadow-md space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Average Coach Rating</span>
+         
+        </div>
+        <div class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">4.94 / 5.0</div>
+        <div class="text-[11px] text-amber-600 font-bold">Based on 3,420 parent reviews</div>
+      </div>
+
+    </div>
+
+    <!-- Main Split -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Active Cohorts Table -->
+      <div class="lg:col-span-8 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200/80 dark:border-slate-700 shadow-md space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Active Cohorts Schedule</h2>
+            <p class="text-xs text-slate-500">Live Zoom classes currently in session</p>
+          </div>
+          <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">● Live Today</span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-50 dark:bg-slate-900/60 text-slate-400 font-bold uppercase text-[10px]">
+              <tr>
+                <th class="p-3">Track / Class</th>
+                <th class="p-3">Coach</th>
+                <th class="p-3">Students</th>
+                <th class="p-3">Schedule</th>
+                <th class="p-3 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 dark:divide-slate-700 font-medium text-slate-700 dark:text-slate-200">
+              <tr>
+                <td class="p-3 font-bold text-orange-600 dark:text-orange-400">Scratch Arcade #12</td>
+                <td class="p-3">Coach Sarah</td>
+                <td class="p-3">4 / 4 Kids</td>
+                <td class="p-3">4:30 PM (PST)</td>
+                <td class="p-3 text-right">
+                  <button onclick="if(window.showToastMessage) window.showToastMessage('Launching Zoom observer mode for Scratch #12...');" class="px-3 py-1 bg-orange-100 text-orange-700 hover:bg-orange-200 rounded-lg text-xs font-bold transition">Observe</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-green-600 dark:text-green-400">Python Knights #08</td>
+                <td class="p-3">Coach Elena</td>
+                <td class="p-3">4 / 4 Kids</td>
+                <td class="p-3">5:00 PM (PST)</td>
+                <td class="p-3 text-right">
+                  <button onclick="if(window.showToastMessage) window.showToastMessage('Launching Zoom observer mode for Python #08...');" class="px-3 py-1 bg-green-100 text-green-700 hover:bg-green-200 rounded-lg text-xs font-bold transition">Observe</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-cyan-600 dark:text-cyan-400">Robotics Rover #04</td>
+                <td class="p-3">Coach David</td>
+                <td class="p-3">3 / 4 Kids</td>
+                <td class="p-3">5:30 PM (PST)</td>
+                <td class="p-3 text-right">
+                  <button onclick="if(window.showToastMessage) window.showToastMessage('Launching Zoom observer mode for Robotics #04...');" class="px-3 py-1 bg-cyan-100 text-cyan-700 hover:bg-cyan-200 rounded-lg text-xs font-bold transition">Observe</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-purple-600 dark:text-purple-400">AI Vision Pioneers #02</td>
+                <td class="p-3">Coach Aria</td>
+                <td class="p-3">4 / 4 Kids</td>
+                <td class="p-3">6:00 PM (PST)</td>
+                <td class="p-3 text-right">
+                  <button onclick="if(window.showToastMessage) window.showToastMessage('Launching Zoom observer mode for AI #02...');" class="px-3 py-1 bg-purple-100 text-purple-700 hover:bg-purple-200 rounded-lg text-xs font-bold transition">Observe</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Project Approval Queue -->
+      <div class="lg:col-span-4 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200/80 dark:border-slate-700 shadow-md space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Arcade Submissions</h2>
+          <span class="text-xs text-amber-500 font-bold">3 Pending</span>
+        </div>
+
+        <div class="space-y-3">
+          <!-- Submission 1 -->
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-700 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900 dark:text-white text-xs">Leo M. (Age 9)</span>
+              <span class="text-[10px] text-orange-600 bg-orange-100 dark:bg-orange-950 px-2 py-0.5 rounded-full font-bold">Scratch 3.0</span>
+            </div>
+            <p class="text-xs text-slate-500">"Space Asteroid-Dodger v2.4"</p>
+            <div class="flex items-center justify-between pt-1">
+              <a href="../index.html" target="_blank" class="text-[11px] text-orange-500 font-bold hover:underline">Preview Game ↗</a>
+              <button data-student="Leo M." class="admin-approve-btn px-3 py-1 bg-orange-600 text-white rounded-lg text-xs font-bold shadow hover:bg-orange-700 transition">
+                Approve to Arcade
+              </button>
+            </div>
+          </div>
+
+          <!-- Submission 2 -->
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-700 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900 dark:text-white text-xs">Maya S. (Age 8)</span>
+              <span class="text-[10px] text-pink-600 bg-pink-100 dark:bg-pink-950 px-2 py-0.5 rounded-full font-bold">Scratch Jr</span>
+            </div>
+            <p class="text-xs text-slate-500">"The Dancing Astronaut Storybook"</p>
+            <div class="flex items-center justify-between pt-1">
+              <a href="../index.html" target="_blank" class="text-[11px] text-orange-500 font-bold hover:underline">Preview Game ↗</a>
+              <button data-student="Maya S." class="admin-approve-btn px-3 py-1 bg-orange-600 text-white rounded-lg text-xs font-bold shadow hover:bg-orange-700 transition">
+                Approve to Arcade
+              </button>
+            </div>
+          </div>
+
+          <!-- Submission 3 -->
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-700 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900 dark:text-white text-xs">Ethan K. (Age 12)</span>
+              <span class="text-[10px] text-green-600 bg-green-100 dark:bg-green-950 px-2 py-0.5 rounded-full font-bold">Python Pygame</span>
+            </div>
+            <p class="text-xs text-slate-500">"Glow Mandala Matrix Algorithm"</p>
+            <div class="flex items-center justify-between pt-1">
+              <a href="../index.html" target="_blank" class="text-[11px] text-orange-500 font-bold hover:underline">Preview Game ↗</a>
+              <button data-student="Ethan K." class="admin-approve-btn px-3 py-1 bg-orange-600 text-white rounded-lg text-xs font-bold shadow hover:bg-orange-700 transition">
+                Approve to Arcade
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="../js/dashboard-navbar.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/form-validation.js"></script>
+</body>
+</html>

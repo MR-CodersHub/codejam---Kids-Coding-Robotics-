@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Free Family Account | CodeJam Kids Coding Academy</title>
+  <meta name="description" content="Sign up for CodeJam Coding Academy. Get a free 1-on-1 trial class, choose your child's age track, and start building real games.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#EE5928',
+              yellow: '#F9B829',
+              pink: '#FA6B88',
+              green: '#88BD37',
+              blue: '#44B8C7',
+              purple: '#9063CD',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    if (localStorage.getItem('meelo_theme') === 'dark') document.documentElement.classList.add('dark');
+    if (localStorage.getItem('meelo_rtl') === 'true') document.documentElement.setAttribute('dir', 'rtl');
+  </script>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#FBF8F1] dark:bg-[#0F1322] text-slate-800 dark:text-slate-100 transition-colors">
+
+  <!-- SECTION 1: SIGNUP CARD & FORM -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-lg mx-auto px-4">
+      <div class="bg-white dark:bg-slate-800 p-8 sm:p-10 rounded-3xl border border-slate-200/80 dark:border-slate-700 shadow-2xl space-y-6">
+        
+        <div class="text-center space-y-2">
+          <a href="../index.html" class="inline-flex items-center gap-3 group mx-auto justify-center">
+            <img src="../assets/logo.png" alt="CodeJam Logo" class="w-14 h-14 object-contain drop-shadow-lg transition-transform group-hover:scale-105">
+            <div class="flex flex-col leading-none text-left">
+              <span class="font-heading text-2xl font-bold text-orange-600 dark:text-orange-400 tracking-tight">CodeJam</span>
+              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.18em] mt-0.5">Kids Coding Academy</span>
+            </div>
+          </a>
+          <h1 class="font-heading text-3xl font-bold text-slate-900 dark:text-white">Create Family Account</h1>
+          <p class="text-xs text-slate-500">Join 50,000+ young creators on CodeJam</p>
+        </div>
+
+        <form id="signupForm" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Parent's Name *</label>
+              <input type="text" placeholder="Jennifer Smith" required class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Parent's Email *</label>
+              <input type="email" placeholder="jennifer@example.com" required class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Child's Name *</label>
+              <input type="text" placeholder="Leo" required class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Child's Age *</label>
+              <select required class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+                <option value="">Select Age</option>
+                <option value="6">Age 6 (Scratch Jr)</option>
+                <option value="7">Age 7 (Scratch Jr)</option>
+                <option value="8">Age 8 (Scratch Arcade)</option>
+                <option value="9">Age 9 (Scratch Arcade)</option>
+                <option value="10">Age 10 (Scratch / Python)</option>
+                <option value="11">Age 11 (Python Dev)</option>
+                <option value="12">Age 12 (Python Dev)</option>
+                <option value="13">Age 13 (Robotics & AI)</option>
+                <option value="14">Age 14 (Robotics & AI)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Create Password *</label>
+            <input type="password" placeholder="At least 6 characters" required class="w-full px-4 py-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+          </div>
+
+          <div class="flex items-start gap-2 pt-1 text-[11px] text-slate-500">
+            <input type="checkbox" required class="mt-0.5 rounded text-orange-500 focus:ring-orange-400">
+            <span>I agree to the <a href="Terms-of-service.html" class="text-orange-500 font-bold underline">Terms</a> and <a href="Privacy-policy.html" class="text-orange-500 font-bold underline">COPPA Privacy Policy</a>.</span>
+          </div>
+
+          <button type="submit" class="w-full btn-meelo-yellow py-3.5 rounded-2xl text-xs sm:text-sm font-bold shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2">
+            Create Free Account & Claim Trial <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </form>
+
+        <div class="text-center text-xs text-slate-500 pt-2">
+          Already have an account? <a href="login.html" class="text-orange-600 dark:text-orange-400 font-bold hover:underline">Sign In →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: HELP -->
+  <section class="py-6 bg-white dark:bg-slate-900 text-center text-xs text-slate-400">
+    <span>Questions before signing up? <a href="contact.html" class="text-orange-500 font-bold">Talk to an Academic Advisor</a></span>
+  </section>
+
+  <!-- SECTION 5: SAFETY -->
+  <section class="py-4 bg-slate-50 dark:bg-slate-800/40 text-center text-[11px] text-slate-400">
+    <span>Encrypted & Protected • COPPA Certified Academy</span>
+  </section>
+
+  <script src="../js/form-validation.js"></script>
+</body>
+</html>

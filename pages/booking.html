@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enroll & Book Course | CodeJam Kids Coding Academy</title>
+  <meta name="description" content="Enroll your child in live online coding cohorts (max 4 students). Choose your age track, schedule, and secure risk-free with our 30-day guarantee.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#EE5928',
+              yellow: '#F9B829',
+              pink: '#FA6B88',
+              green: '#88BD37',
+              blue: '#44B8C7',
+              purple: '#9063CD',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#FBF8F1] dark:bg-[#0F1322] text-slate-800 dark:text-slate-100 transition-colors">
+  
+  <div id="shared-navbar"></div>
+
+  <!-- SECTION 1: HEADER BANNER -->
+  <section class="py-20 md:py-28 bg-orange-50/40 dark:bg-slate-800/40 border-b border-orange-500/10 flex items-center min-h-[340px]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 text-center lg:text-left space-y-4">
+          <div class="inline-flex items-center gap-2 bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 px-4 py-1 rounded-full text-xs font-bold border border-amber-300/40">
+            <i data-lucide="shield-check" class="w-4 h-4 text-green-600"></i> 100% Risk-Free 30-Day Money-Back Guarantee
+          </div>
+          <h1 class="font-heading text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
+            Enroll Your Child in Live Coding Classes
+          </h1>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0">
+            Join our small live cohorts (max 4 students) with expert certified mentors.
+          </p>
+        </div>
+        <div class="lg:col-span-5 hidden lg:flex justify-center">
+          <div class="relative">
+            <div class="absolute -top-8 -left-10 w-36 h-36 bg-amber-200/60 dark:bg-amber-500/20 rounded-full -z-10"></div>
+            <svg class="absolute -top-4 -right-8 w-10 h-10 text-cyan-400 rotate-12" viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M15 25 C5 15 5 5 15 15 C25 25 35 25 40 15 C45 5 35 5 30 15 C20 35 10 45 25 35" stroke-linecap="round"/>
+            </svg>
+            <img src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?auto=format&fit=crop&w=800&q=80" alt="Scheduling an enrollment for live classes" class="w-72 h-80 object-cover rounded-t-[140px] rounded-b-[44px] border-4 border-white dark:border-slate-700 shadow-2xl">
+            <span class="absolute -bottom-5 -left-5 w-24 h-24 bg-green-300/50 dark:bg-green-500/20 rounded-3xl rotate-12 -z-10"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: BOOKING / CHECKOUT SPLIT FORM -->
+  <section class="py-16 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <form id="bookingCheckoutForm" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Multi-Step Enrollment Fields -->
+        <div class="lg:col-span-7 space-y-10">
+          
+          <!-- STEP 1: CHOOSE PROGRAM TRACK -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-[#FBF8F1] dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-orange-600 text-white font-bold text-xs flex items-center justify-center">1</span>
+              <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Select Course Track</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="courseSelectorGrid">
+              
+              <!-- Track 1 -->
+              <label class="course-radio-label relative p-4 rounded-2xl bg-white dark:bg-slate-900 border-2 border-orange-500 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 transition">
+                <input type="radio" name="selectedCourse" value="scratch-arcade" data-price="129" data-name="Scratch 3.0 Arcade Dev" data-age="Ages 8–10" checked class="sr-only">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-orange-600 bg-orange-100 dark:bg-orange-950 px-2 py-0.5 rounded-full">Ages 8–10</span>
+                    <span class="font-heading text-lg font-bold text-slate-900 dark:text-white">$129<span class="text-[10px] text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                  <div class="font-heading text-lg font-bold text-slate-900 dark:text-white mt-1">Scratch 3.0 Arcade</div>
+                  <p class="text-[11px] text-slate-500 mt-1">2D platformers, jump physics & game publishing.</p>
+                </div>
+              </label>
+
+              <!-- Track 2 -->
+              <label class="course-radio-label relative p-4 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 hover:border-orange-300 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 transition">
+                <input type="radio" name="selectedCourse" value="python-game-dev" data-price="129" data-name="Python Game & App Builder" data-age="Ages 11–14" class="sr-only">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-green-600 bg-green-100 dark:bg-green-950 px-2 py-0.5 rounded-full">Ages 11–14</span>
+                    <span class="font-heading text-lg font-bold text-slate-900 dark:text-white">$129<span class="text-[10px] text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                  <div class="font-heading text-lg font-bold text-slate-900 dark:text-white mt-1">Python 3 Game Dev</div>
+                  <p class="text-[11px] text-slate-500 mt-1">Text-based code, Pygame graphics & algorithms.</p>
+                </div>
+              </label>
+
+              <!-- Track 3 -->
+              <label class="course-radio-label relative p-4 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 hover:border-orange-300 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 transition">
+                <input type="radio" name="selectedCourse" value="scratch-jr" data-price="89" data-name="Scratch Jr & Creative Logic" data-age="Ages 6–8" class="sr-only">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-pink-600 bg-pink-100 dark:bg-pink-950 px-2 py-0.5 rounded-full">Ages 6–8</span>
+                    <span class="font-heading text-lg font-bold text-slate-900 dark:text-white">$89<span class="text-[10px] text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                  <div class="font-heading text-lg font-bold text-slate-900 dark:text-white mt-1">Scratch Jr Creative</div>
+                  <p class="text-[11px] text-slate-500 mt-1">Visual blocks, storytelling & early logic.</p>
+                </div>
+              </label>
+
+              <!-- Track 4 -->
+              <label class="course-radio-label relative p-4 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 hover:border-orange-300 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 transition">
+                <input type="radio" name="selectedCourse" value="robotics-iot" data-price="169" data-name="Robotics & Micro:bit Hardware Lab" data-age="Ages 8–14" class="sr-only">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="text-[11px] font-bold text-cyan-600 bg-cyan-100 dark:bg-cyan-950 px-2 py-0.5 rounded-full">Kit Included</span>
+                    <span class="font-heading text-lg font-bold text-slate-900 dark:text-white">$169<span class="text-[10px] text-slate-400 font-normal">/mo</span></span>
+                  </div>
+                  <div class="font-heading text-lg font-bold text-slate-900 dark:text-white mt-1">Robotics & AI Kits</div>
+                  <p class="text-[11px] text-slate-500 mt-1">Micro:bit smart rover mailed home free.</p>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- STEP 2: COHORT SCHEDULE & TIME -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-[#FBF8F1] dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-orange-600 text-white font-bold text-xs flex items-center justify-center">2</span>
+              <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Choose Live Class Schedule</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">Preferred Days *</label>
+                <select id="bookingDays" required class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+                  <option value="Mon/Wed">Mondays & Wednesdays (2x / week)</option>
+                  <option value="Tue/Thu">Tuesdays & Thursdays (2x / week)</option>
+                  <option value="Sat">Saturday Immersion (1x / week)</option>
+                  <option value="Sun">Sunday Immersion (1x / week)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">Time Slot (Your Local Time) *</label>
+                <select id="bookingTimeSlot" required class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+                  <option value="3:30 PM - 4:30 PM">3:30 PM – 4:30 PM</option>
+                  <option value="4:45 PM - 5:45 PM" selected>4:45 PM – 5:45 PM</option>
+                  <option value="6:00 PM - 7:00 PM">6:00 PM – 7:00 PM</option>
+                  <option value="10:00 AM - 11:30 AM (Weekend)">10:00 AM – 11:30 AM (Weekend)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: STUDENT & PARENT INFORMATION -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-[#FBF8F1] dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-orange-600 text-white font-bold text-xs flex items-center justify-center">3</span>
+              <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Student & Parent Details</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">Child's First Name *</label>
+                <input type="text" id="bookingChildName" required placeholder="e.g. Leo" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">Child's Age *</label>
+                <input type="number" id="bookingChildAge" required min="6" max="15" value="9" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">Parent's Full Name *</label>
+                <input type="text" required placeholder="Jennifer Smith" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">Parent's Email Address *</label>
+                <input type="email" required placeholder="jennifer@example.com" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">Delivery Address (For STEM Hardware Kit & Welcome Pack) *</label>
+              <input type="text" required placeholder="123 Oak Street, Suite 4B, City, State, ZIP" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+            </div>
+          </div>
+
+          <!-- STEP 4: PAYMENT METHOD -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-[#FBF8F1] dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700 shadow-sm space-y-5">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-orange-600 text-white font-bold text-xs flex items-center justify-center">4</span>
+              <h2 class="font-heading text-2xl font-bold text-slate-900 dark:text-white">Secure Checkout</h2>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">Card Number *</label>
+                <div class="relative">
+                  <input type="text" required placeholder="4242 •••• •••• 4242" class="w-full pl-11 pr-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-mono text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+                  <i data-lucide="credit-card" class="w-4 h-4 text-slate-400 absolute left-4 top-3.5"></i>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">Expiry Date *</label>
+                  <input type="text" required placeholder="MM / YY" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-mono text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">CVC / CVV *</label>
+                  <input type="text" required placeholder="123" class="w-full px-4 py-3 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-mono text-slate-800 dark:text-white focus:outline-none focus:border-orange-500">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Order Summary Sidebar -->
+        <div class="lg:col-span-5 sticky top-28 space-y-6">
+          
+          <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-700/60 space-y-6">
+            <h3 class="font-heading text-2xl font-bold text-white border-b border-slate-700 pb-3">Enrollment Summary</h3>
+
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Selected Track:</span>
+                <span id="summaryCourseName" class="font-bold text-amber-300">Scratch 3.0 Arcade</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Cohort Size:</span>
+                <span class="font-bold text-white">1:4 Small Live Class</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Schedule:</span>
+                <span id="summarySchedule" class="font-bold text-white">Mon/Wed • 4:45 PM</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400">Hardware Kit & Materials:</span>
+                <span class="font-bold text-green-400">FREE ($120 Value)</span>
+              </div>
+            </div>
+
+            <!-- Billing Toggle -->
+            <div class="p-3 bg-white/10 rounded-2xl flex items-center justify-between text-xs">
+              <span>Billing Cycle:</span>
+              <select id="bookingBillingCycle" class="bg-slate-800 text-amber-300 font-bold px-3 py-1 rounded-xl border border-slate-600 focus:outline-none">
+                <option value="monthly">Monthly ($129/mo)</option>
+                <option value="annual">Annual (Save 25%)</option>
+              </select>
+            </div>
+
+            <!-- Total Line -->
+            <div class="border-t border-slate-700 pt-4 flex items-baseline justify-between">
+              <div>
+                <div class="text-xs text-slate-400">Due Today</div>
+                <div class="text-[11px] text-slate-500">Includes 30-Day Guarantee</div>
+              </div>
+              <div class="text-right">
+                <div id="summaryTotalPrice" class="font-heading text-4xl font-bold text-orange-400">$129</div>
+                <div class="text-[10px] text-green-400 font-semibold">Cancel anytime with 1 click</div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full btn-meelo-orange py-4 rounded-2xl font-bold text-sm shadow-xl shadow-orange-500/30 flex items-center justify-center gap-2">
+              <i data-lucide="lock" class="w-4 h-4"></i> Complete Secure Enrollment
+            </button>
+
+            <!-- Guarantee Note -->
+            <div class="text-center text-[11px] text-slate-400 flex items-center justify-center gap-1.5 pt-1">
+              <i data-lucide="shield-check" class="w-4 h-4 text-green-400"></i> Protected by 256-bit SSL encryption
+            </div>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 space-y-3 text-center sm:text-left">
+            <div class="flex items-center gap-2 text-amber-500 justify-center sm:justify-start">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300 ml-1">4.9/5 from 3,500+ Parents</span>
+            </div>
+            <p class="text-xs text-slate-500 leading-relaxed italic">
+              "Booking was effortless. Within 5 minutes, our welcome kit was dispatched and our son received his student dashboard login."
+            </p>
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- SECTION 3: FREQUENTLY ASKED ENROLLMENT QUESTIONS -->
+  <section class="py-16 bg-[#FBF8F1] dark:bg-[#0F1322]">
+    <div class="max-w-4xl mx-auto px-4 space-y-6">
+      <h3 class="font-heading text-3xl font-bold text-center text-slate-900 dark:text-white mb-8">Enrollment & Billing FAQs</h3>
+      <div class="space-y-4">
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">When does my child's first class start?</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">Classes start the following week of your selected schedule. You will receive immediate calendar invites and Zoom links in your student dashboard.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+          <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">How does the 30-Day Money-Back Guarantee work?</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">If you or your child are not completely delighted within the first 30 days or 4 attended classes, simply email us and receive a 100% full refund with no questions asked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="shared-footer"></div>
+
+  <!-- Scripts -->
+  <script src="../js/navbar.js"></script>
+  <script src="../js/footer.js"></script>
+  <script src="../js/form-validation.js"></script>
+
+  <!-- Interactive Booking Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const radios = document.querySelectorAll('input[name="selectedCourse"]');
+      const courseLabels = document.querySelectorAll('.course-radio-label');
+      const summaryCourseName = document.getElementById('summaryCourseName');
+      const summarySchedule = document.getElementById('summarySchedule');
+      const summaryTotalPrice = document.getElementById('summaryTotalPrice');
+      const daysSelect = document.getElementById('bookingDays');
+      const timeSlotSelect = document.getElementById('bookingTimeSlot');
+      const billingCycle = document.getElementById('bookingBillingCycle');
+      const form = document.getElementById('bookingCheckoutForm');
+
+      let currentPrice = 129;
+
+      function updateSummary() {
+        radios.forEach((radio, index) => {
+          if (radio.checked) {
+            courseLabels[index].className = 'course-radio-label relative p-4 rounded-2xl bg-white dark:bg-slate-900 border-2 border-orange-500 cursor-pointer shadow-md flex flex-col justify-between space-y-2 transition';
+            summaryCourseName.textContent = radio.getAttribute('data-name');
+            currentPrice = parseInt(radio.getAttribute('data-price')) || 129;
+          } else {
+            courseLabels[index].className = 'course-radio-label relative p-4 rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-700 hover:border-orange-300 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 transition';
+          }
+        });
+
+        summarySchedule.textContent = `${daysSelect.value} • ${timeSlotSelect.value.split(' ')[0]}`;
+
+        if (billingCycle.value === 'annual') {
+          const discounted = Math.round(currentPrice * 0.75 * 12);
+          summaryTotalPrice.textContent = `$${discounted}/yr`;
+        } else {
+          summaryTotalPrice.textContent = `$${currentPrice}`;
+        }
+      }
+
+      radios.forEach(r => r.addEventListener('change', updateSummary));
+      if (daysSelect) daysSelect.addEventListener('change', updateSummary);
+      if (timeSlotSelect) timeSlotSelect.addEventListener('change', updateSummary);
+      if (billingCycle) billingCycle.addEventListener('change', updateSummary);
+
+      // Check query parameter ?course=
+      const urlParams = new URLSearchParams(window.location.search);
+      const preselectedCourse = urlParams.get('course') || urlParams.get('id');
+      if (preselectedCourse) {
+        radios.forEach(r => {
+          if (r.value === preselectedCourse) {
+            r.checked = true;
+          }
+        });
+      }
+      updateSummary();
+
+      // Form submission handler
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const child = document.getElementById('bookingChildName').value || 'Student';
+          if (window.showToastMessage) {
+            window.showToastMessage(`Welcome ${child}! Enrollment confirmed. Welcome kit dispatched.`);
+          }
+          setTimeout(() => {
+            window.location.href = 'user-dashboard.html';
+          }, 1500);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

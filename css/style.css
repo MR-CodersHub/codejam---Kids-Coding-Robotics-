@@ -1,0 +1,320 @@
+/* ==========================================================================
+   CODEJAM KIDS CODING ACADEMY - UNIFIED STYLESHEET
+   Aesthetic: Warm cream textured backdrop, vibrant joyful pastels,
+   playful code-editor motifs & robot mascot, organic pill & arch frames,
+   Cormorant & Playwrite typography, dark mode & RTL support.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Upright:wght@300;400;500;600;700&family=Playwrite+US+Modern:wght@100..400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Fredoka:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-warm: #FBF8F1;
+  --bg-card: #FFFFFF;
+  --bg-card-warm: #FFF9F2;
+  --primary-orange: #EE5928;
+  --primary-yellow: #F9B829;
+  --primary-pink: #FA6B88;
+  --primary-green: #88BD37;
+  --primary-blue: #44B8C7;
+  --primary-purple: #9063CD;
+  --text-dark: #1E2235;
+  --text-body: #4E5367;
+  --text-muted: #7E849A;
+  --border-light: #EFE8DA;
+
+  --font-heading: 'Cormorant Upright', serif;
+  --font-subheading: 'Cormorant Infant', serif;
+  --font-script: 'Playwrite US Modern', cursive;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-display: 'Fredoka', sans-serif;
+}
+
+/* Dark Mode Theme */
+.dark {
+  --bg-warm: #0F1322;
+  --bg-card: #181E34;
+  --bg-card-warm: #1D243F;
+  --text-dark: #F8FAFC;
+  --text-body: #CBD5E1;
+  --text-muted: #94A3B8;
+  --border-light: #2D3748;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-warm);
+  color: var(--text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  background-image: radial-gradient(rgba(238, 89, 40, 0.04) 1.5px, transparent 1.5px), radial-gradient(rgba(249, 184, 41, 0.04) 1.5px, transparent 1.5px);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
+}
+
+.dark body {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1.5px, transparent 1.5px);
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-subheading {
+  font-family: var(--font-subheading);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Vector Icon Base */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 1.2em;
+  height: 1.2em;
+  stroke-width: 2;
+  stroke: currentColor;
+  fill: none;
+  flex-shrink: 0;
+}
+
+/* Arch & Oval Geometry */
+.arch-main {
+  border-radius: 190px 190px 48px 48px;
+}
+
+.arch-sm {
+  border-radius: 120px 120px 30px 30px;
+}
+
+.cutout-overlay-top {
+  border-radius: 100px 100px 0 0;
+}
+
+/* Buttons */
+.btn-meelo-orange {
+  background: linear-gradient(135deg, #EE5928 0%, #FA6B88 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(238, 89, 40, 0.3);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-meelo-orange:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(238, 89, 40, 0.42);
+}
+
+.btn-meelo-yellow {
+  background: linear-gradient(135deg, #F9B829 0%, #FF9E1B 100%);
+  color: #3F2601;
+  box-shadow: 0 8px 20px rgba(249, 184, 41, 0.3);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-meelo-yellow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(249, 184, 41, 0.45);
+}
+
+/* Toast Notification */
+.toast-box {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99999;
+  background: #1E2235;
+  color: #FFFFFF;
+  padding: 14px 24px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-left: 4px solid var(--primary-yellow);
+}
+
+.toast-box.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Glassmorphic Navbar */
+.glass-nav {
+  background: rgba(251, 248, 241, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.dark .glass-nav {
+  background: rgba(15, 19, 34, 0.94);
+}
+
+/* ==========================================================================
+   PLAYFUL CODE-EDITOR THEME (Kid-Friendly Motifs)
+   Fredoka display face, floating editor windows, rainbow code lines,
+   robot-friendly motion, and a scrolling concepts marquee.
+   ========================================================================== */
+
+/* Friendly Rounded Display Face */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+}
+
+/* Floating Editor "Code Window" Card */
+.code-window {
+  background: #0F1322;
+  border-radius: 20px;
+  box-shadow: 0 22px 50px rgba(15, 19, 34, 0.35);
+  border: 3px solid rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+.dark .code-window {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.code-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.code-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+.code-dot.red { background: #FF5F57; }
+.code-dot.yellow { background: #FEBC2E; }
+.code-dot.green { background: #28C840; }
+
+.code-filename {
+  margin-left: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.code-body {
+  padding: 14px 18px 18px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 2;
+  color: #CBD5E1;
+  overflow-x: auto;
+}
+
+.code-line {
+  display: flex;
+  gap: 12px;
+  white-space: nowrap;
+}
+.code-line .line-num {
+  min-width: 20px;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.28);
+  user-select: none;
+  font-size: 11px;
+  line-height: 2.2;
+}
+
+.code-comment { color: #8A90A8; }
+.code-command { color: #F9B829; }
+.code-string { color: #A6C96C; }
+.code-prop   { color: #9DB2FF; }
+.code-punc   { color: #FA6B88; }
+.code-fn     { color: #44B8C7; }
+
+/* Scrolling Concepts Marquee */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 52px;
+  padding-right: 52px;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Playful Motion */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float { animation: float-y 5s ease-in-out infinite; }
+.animate-float-slow { animation: float-y 7s ease-in-out infinite; }
+
+@keyframes bob-x {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-7px) rotate(2deg); }
+}
+.animate-bob { animation: bob-x 4s ease-in-out infinite; }
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+.animate-wiggle { animation: wiggle 1.8s ease-in-out infinite; transform-origin: center; }
+
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.animate-cursor { animation: blink-cursor 1.1s step-start infinite; }
+
+@keyframes pulse-soft {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(238, 89, 40, 0.45); }
+  70% { box-shadow: 0 0 0 14px rgba(238, 89, 40, 0); }
+}
+.animate-pulse-soft { animation: pulse-soft 2.4s ease-out infinite; }
+
+/* Reduced Motion Respect */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .animate-float,
+  .animate-float-slow,
+  .animate-bob,
+  .animate-wiggle,
+  .animate-cursor,
+  .animate-pulse-soft {
+    animation: none !important;
+  }
+}

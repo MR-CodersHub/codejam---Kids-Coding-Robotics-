@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEM Article | CodeJam Coding Academy</title>
+  <meta name="description" content="Read full in-depth articles on child coding pedagogy, Scratch, Python, and robotics.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#EE5928',
+              yellow: '#F9B829',
+              pink: '#FA6B88',
+              green: '#88BD37',
+              blue: '#44B8C7',
+              purple: '#9063CD',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#FBF8F1] dark:bg-[#0F1322] text-slate-800 dark:text-slate-100 transition-colors">
+  
+  <div id="shared-navbar"></div>
+
+  <!-- Dynamic Content Container -->
+  <main id="dynamicBlogArticleContent" class="min-h-screen py-12 md:py-16">
+    <div class="py-24 text-center">
+      <div class="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <p class="text-xs text-slate-400 font-semibold">Loading Article...</p>
+    </div>
+  </main>
+
+  <div id="shared-footer"></div>
+
+  <!-- Scripts -->
+  <script src="../js/navbar.js"></script>
+  <script src="../js/footer.js"></script>
+  <script src="../js/blog-details.js"></script>
+  <script src="../js/form-validation.js"></script>
+</body>
+</html>
